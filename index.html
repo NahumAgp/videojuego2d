@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calavera Collector - Día de Muertos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<center>
+    <body>
+    <!-- Overlay de inicio -->
+    <div id="startOverlay" class="start-overlay">
+        <div class="start-content">
+            <h1>🎃 Calavera Collector 🎃</h1>
+            <p>Bienvenido a Calavera Collector</p>
+            <p>Prepárate para cazar calaveras en un desafío cada vez más difícil</p>
+            <button id="startGame" class="btn btn-start">🎮 Iniciar Juego</button>
+        </div>
+    </div>
+
+    <!-- Fondo para toda la pantalla -->
+    <div class="fullscreen-background"></div>
+
+    <!-- Header -->
+    <header class="bg-orange text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <img src="assets/images/catrina.png" alt="Catrina" class="header-img" onerror="this.style.display='none'">
+                </div>
+                <div class="col-md-8 text-center">
+                    <h1 class="display-4 fw-bold">🎃 Calavera Collector 🎃</h1>
+                    <p class="lead mb-0">¡Atrapa las calaveras antes de que desaparezcan!</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <img src="assets/images/calavera1.png" alt="Calavera" class="header-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Panel de Instrucciones a la izquierda -->
+        <div class="instructions-sidebar">
+            <h4>📜 Instrucciones</h4>
+            <div class="instruction-item">
+                <span class="instruction-icon">🎯</span>
+                <span>Haz clic en las calaveras para eliminarlas</span>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-icon">⚡</span>
+                <span>Gana puntos por cada eliminación</span>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-icon">🚀</span>
+                <span>La velocidad aumenta con cada eliminación</span>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-icon">💀</span>
+                <span>No dejes escapar ninguna!</span>
+            </div>
+            
+            <!-- Controles -->
+            <div class="sidebar-controls">
+                <button id="toggleMusic" class="btn btn-control">🔊 Activar Música</button>
+            </div>
+        </div>
+
+        <!-- Área del Juego -->
+        <div class="game-area">
+            <!-- Canvas del Juego -->
+            <div class="game-canvas-container">
+                <canvas id="canvas"></canvas>
+                
+                <!-- Solo el botón de pausa dentro del juego -->
+                <div class="game-controls">
+                    <button id="pauseGame" class="btn btn-control">⏸️ Pausa</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puntuación en esquina superior derecha -->
+        <div class="score-panel">
+            <div class="score-main">
+                <h3>Puntuación: <span id="score">0</span></h3>
+            </div>
+            <div class="score-stats">
+                <div class="stat">
+                    <span>Tiempo:</span>
+                    <strong id="gameTime">00:00</strong>
+                </div>
+                <div class="stat">
+                    <span>Multiplicador:</span>
+                    <strong id="multiplier">1x</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   <!-- Footer -->
+<footer class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-0">Autor: Aguilar Perez Nahum | 23200135</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Audio -->
+    <audio id="backgroundMusic" loop>
+        <source src="assets/Audio/musica.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clickSound">
+        <source src="assets/Audio/click.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</center>
+</html>
